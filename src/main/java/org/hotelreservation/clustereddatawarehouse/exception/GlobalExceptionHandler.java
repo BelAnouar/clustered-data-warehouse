@@ -3,16 +3,20 @@ package org.hotelreservation.clustereddatawarehouse.exception;
 import lombok.extern.slf4j.Slf4j;
 import org.hotelreservation.clustereddatawarehouse.validation.response.ErrorResponse;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
+
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -28,9 +32,9 @@ public class GlobalExceptionHandler {
                 "Validation Failed", "Invalid request data", errors);
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
+    @ExceptionHandler(DuplicateDealException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
-    public ErrorResponse handleDuplicate(IllegalArgumentException ex) {
+    public ErrorResponse handleDuplicate(DuplicateDealException ex) {
         return new ErrorResponse(LocalDateTime.now(), 409,
                 "Duplicate Deal", ex.getMessage(), null);
     }
