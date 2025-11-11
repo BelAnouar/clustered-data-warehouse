@@ -6,7 +6,7 @@ A Spring Boot application providing a clustered data warehouse example using **S
 
 ## Quick Facts
 
-* **GroupId:** `org.clustered-data-warehouse`
+* **GroupId:** `org.hotelreservation`
 * **ArtifactId:** `clustered-data-warehouse`
 * **Java:** 21 (required for Spring Boot 3.5.x)
 * **Database:** PostgreSQL (`jdbc:postgresql://localhost:5432/fx_deals`)
@@ -89,7 +89,7 @@ clustered-data-warehouse/
 ├── mvnw.cmd                         # Maven wrapper
 ├── src/
 │   ├── main/
-│   │   ├── java/org/clustered-data-warehouse/clustereddatawarehouse/
+│   │   ├── java/org/hotelreservation/clustereddatawarehouse/
 │   │   │   ├── ClusteredDataWarehouseApplication.java
 │   │   │   ├── controller/          # REST endpoints
 │   │   │   ├── service/             # Business logic
