@@ -89,7 +89,7 @@ clustered-data-warehouse/
 ├── mvnw.cmd                         # Maven wrapper
 ├── src/
 │   ├── main/
-│   │   ├── java/org/hotelreservation/clustereddatawarehouse/
+│   │   ├── java/org/clustered-data-warehouse/clustereddatawarehouse/
 │   │   │   ├── ClusteredDataWarehouseApplication.java
 │   │   │   ├── controller/          # REST endpoints
 │   │   │   ├── service/             # Business logic
