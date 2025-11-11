@@ -23,14 +23,9 @@ public class FxDealServiceImpl implements FxDealService {
     @Override
     @Transactional
     public FxDealResponse createDeal(FxDealRequest request) {
+        log.info("Create new deal : {}", request );
 
-        if (fxDealRepository.existsByDealUniqueId(request.dealUniqueId())) {
-            log.warn("Duplicate deal detected: {}", request.dealUniqueId());
-            throw new DuplicateDealException(
-                    String.format("Deal with ID %s already exists", request.dealUniqueId())
-            );
-        }
-
+        Duplicate(request.dealUniqueId());
         FxDeal deal = dealMapper.toEntity(request);
 
         try {
@@ -42,6 +37,16 @@ public class FxDealServiceImpl implements FxDealService {
         } catch (DataIntegrityViolationException e) {
             throw new DuplicateDealException(
                     String.format("Deal with ID %s already exists", request.dealUniqueId())
+            );
+        }
+    }
+
+    private void  Duplicate(final  String dealUniqueId)  {
+       log.info("Duplicate deal : {}", dealUniqueId);
+        if (fxDealRepository.existsByDealUniqueId(dealUniqueId)) {
+            log.warn("Duplicate deal detected: {}", dealUniqueId);
+            throw new DuplicateDealException(
+                    String.format("Deal with ID %s already exists", dealUniqueId)
             );
         }
     }

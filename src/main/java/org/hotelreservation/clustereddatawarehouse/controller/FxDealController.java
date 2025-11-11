@@ -8,7 +8,6 @@ import org.hotelreservation.clustereddatawarehouse.model.dto.FxDealRequest;
 import org.hotelreservation.clustereddatawarehouse.model.dto.FxDealResponse;
 import org.hotelreservation.clustereddatawarehouse.service.FxDealService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
