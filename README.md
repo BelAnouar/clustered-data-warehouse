@@ -1,6 +1,6 @@
 # Clustered Data Warehouse
 
-A Spring Boot application providing a clustered data warehouse example using **Spring Data JPA**, **PostgreSQL**, **Liquibase**, **MapStruct**, and **Testcontainers**.
+A Spring Boot application providing a clustered data warehouse example using **Spring Data JPA**, **PostgreSQL**, **Liquibase**, **MapStruct**, and **Test Unit**.
 
 ---
 
