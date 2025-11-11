@@ -25,7 +25,7 @@ public class FxDealServiceImpl implements FxDealService {
     public FxDealResponse createDeal(FxDealRequest request) {
         log.info("Create new deal : {}", request );
 
-        Duplicate(request.dealUniqueId());
+        checkDuplicate(request.dealUniqueId());
         FxDeal deal = dealMapper.toEntity(request);
 
         try {
@@ -41,8 +41,9 @@ public class FxDealServiceImpl implements FxDealService {
         }
     }
 
-    private void  Duplicate(final  String dealUniqueId)  {
-       log.info("Duplicate deal : {}", dealUniqueId);
+    private void checkDuplicate(final String dealUniqueId) {
+        log.info("Checking for duplicate deal: {}", dealUniqueId);
+
         if (fxDealRepository.existsByDealUniqueId(dealUniqueId)) {
             log.warn("Duplicate deal detected: {}", dealUniqueId);
             throw new DuplicateDealException(
