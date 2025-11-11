@@ -4,6 +4,7 @@ package org.hotelreservation.clustereddatawarehouse.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.hotelreservation.clustereddatawarehouse.model.dto.FxDealRequest;
 import org.hotelreservation.clustereddatawarehouse.model.dto.FxDealResponse;
 import org.hotelreservation.clustereddatawarehouse.service.FxDealService;
