@@ -6,7 +6,7 @@ A Spring Boot application providing a clustered data warehouse example using **S
 
 ## Quick Facts
 
-* **GroupId:** `org.hotelreservation`
+* **GroupId:** `org.clustered-data-warehouse`
 * **ArtifactId:** `clustered-data-warehouse`
 * **Java:** 21 (required for Spring Boot 3.5.x)
 * **Database:** PostgreSQL (`jdbc:postgresql://localhost:5432/fx_deals`)
